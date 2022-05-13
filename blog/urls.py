@@ -16,9 +16,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+from common.views import IndexView
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('test_app.urls')),
-    path('', include('common.urls')),
-    path('', include('blog_api.urls')),
+    path('', IndexView.as_view()),
 ]
